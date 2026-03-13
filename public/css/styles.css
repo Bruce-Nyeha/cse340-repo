@@ -1,48 +1,22 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  display: flexbox;
-  flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #fff;
   color: #000;
-  padding: 0;
   line-height: 1.6;
-  border-radius: 12px;
-  border: 5px solid #0066cc;
-  width: 500px;
 }
 
 header {
-  display: flex;
-  background-color: #ffff;
-  color: #000;
+  background-color: #003366;
+  color: white;
   padding: 10px;
   text-align: center;
-  margin: 20px 30px;
-  position: relative;
 }
-
-
-
-#top-header a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  padding: 20px;
-}
-
-.siteName {
-  font-size: 15px;
-  margin-right: 300px;
-  width: 20px;
-}
-
 
 nav {
   background-color: #336699;
@@ -84,39 +58,36 @@ h1 {
 }
 
 .features ul {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 20px;
   margin: 15px 0;
 }
 
 .features li {
-  margin: 10px 0;
+  margin: 8px 0;
   font-size: 1.1rem;
 }
 
-.own-today img {
+.own-today-btn {
+  display: block;
+  margin: 20px auto;
   max-width: 200px;
-  transition: transform 0.2s;
-}
-
-.own-today:hover img {
-  transform: scale(1.05);
 }
 
 .bottom-sections {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
   margin: 60px 0;
   flex-wrap: wrap;
 }
 
 .upgrades, .reviews {
-  width: 48%;
+  flex: 1;
   min-width: 300px;
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .upgrade-grid {
@@ -136,34 +107,26 @@ h1 {
   border-radius: 4px;
 }
 
-.upgrade-grid figcaption {
-  margin-top: 8px;
-}
-
-.upgrade-grid a {
+.upgrade-grid figcaption a {
   color: #0066cc;
   text-decoration: none;
 }
 
 .reviews ul {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
 }
 
 .reviews li {
-  margin: 12px 0;
-  font-style: italic;
+  margin: 10px 0;
 }
 
 @media (max-width: 768px) {
-  .featured {
-    flex-direction: column;
-  }
-  .bottom-sections {
+  .featured, .bottom-sections {
     flex-direction: column;
   }
   .upgrades, .reviews {
     width: 100%;
-    margin-bottom: 30px;
   }
 }

@@ -1,3 +1,4 @@
+/* --- Global Styles --- */
 * {
   margin: 0;
   padding: 0;
@@ -6,127 +7,184 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #fff;
+  background-image: url("../images/site/checkerboard.jpg");
   color: #000;
-  line-height: 1.6;
 }
 
+#wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-left: 5px solid #add8e6;
+  border-right: 5px solid #add8e6;
+  background-color: #ffffff;
+}
+
+/* --- Header & Nav --- */
 header {
-  background-color: #003366;
-  color: white;
-  padding: 10px;
-  text-align: center;
+  padding: 15px 50px;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#top-header a {
+  text-decoration: none;
+  color: #000;
+}
+
+.siteName {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 nav {
-  background-color: #336699;
-  padding: 10px;
-  text-align: center;
+  background-color: #333;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 10px 0;
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* --- Main Content --- */
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+  padding: 20px 50px;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 28px;
+  text-align: left;
   margin: 20px 0;
 }
 
+/* --- Featured Section (The Overlap) --- */
 .featured {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin: 40px 0;
-  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.featured img {
+  max-width: 100%;
+  height: auto;
 }
 
 .features {
-  text-align: left;
-  max-width: 400px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px 25px;
+  z-index: 5;
 }
 
-.features ul {
-  list-style: disc;
-  padding-left: 20px;
-  margin: 15px 0;
-}
-
-.features li {
-  margin: 8px 0;
-  font-size: 1.1rem;
+.features h2, .features li {
+  color: #4c96b9;
+  font-weight: bold;
+  font-size: 1.2rem;
+  list-style: none;
 }
 
 .own-today-btn {
-  display: block;
-  margin: 20px auto;
-  max-width: 200px;
+  display: inline-block;
+  background-color: #4c96b9;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
+/* --- 1. Parent Container for Side-by-Side Sections --- */
 .bottom-sections {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
-  margin: 60px 0;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 40px 50px;
 }
 
-.upgrades, .reviews {
-  flex: 1;
-  min-width: 300px;
-  background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 8px;
+/* --- 2. Left Side: Delorean Upgrades (2-Column Grid) --- */
+.upgrades {
+  flex: 1; /* Takes up half the space */
+}
+
+.upgrades h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .upgrade-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  grid-template-columns: 1fr 1fr; /* Instruction: 2 columns */
+  gap: 20px;
 }
 
-.upgrade-grid figure {
-  margin: 0;
+.upgrade-item {
   text-align: center;
 }
 
-.upgrade-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
+/* The Blue box behind the icons */
+.upgrade-img-container {
+  background-color: #4c96b9; /* The blue from the image */
+  padding: 10px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 5px;
 }
 
-.upgrade-grid figcaption a {
-  color: #0066cc;
-  text-decoration: none;
+.upgrade-img-container img {
+  max-height: 70px;
+  width: auto;
+}
+
+.upgrade-item a {
+  color: #4c96b9;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+/* --- 3. Right Side: DMC Delorean Reviews --- */
+.reviews {
+  flex: 1; /* Takes up the other half */
+}
+
+.reviews h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .reviews ul {
-  list-style: disc;
+  list-style-type: disc; /* The dots in the image */
   padding-left: 20px;
   text-align: left;
 }
 
 .reviews li {
-  margin: 10px 0;
+  margin-bottom: 15px;
+  font-size: 1rem;
 }
 
+/* Responsive adjustment */
 @media (max-width: 768px) {
-  .featured, .bottom-sections {
-    flex-direction: column;
-  }
-  .upgrades, .reviews {
-    width: 100%;
+  .bottom-sections {
+    flex-direction: column; /* Stacks them on mobile */
   }
 }

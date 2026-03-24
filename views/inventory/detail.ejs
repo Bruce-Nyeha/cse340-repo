@@ -1,0 +1,31 @@
+<h1><%= vehicle.inv_make %> <%= vehicle.inv_model %></h1>
+
+<div style="display: flex; gap: 40px; margin: 30px 0; flex-wrap: wrap;">
+  
+  <!-- Left side: Big image -->
+  <div>
+    <img src="<%= vehicle.inv_image %>" 
+         alt="<%= vehicle.inv_make %> <%= vehicle.inv_model %>" 
+         style="max-width: 550px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  </div>
+
+  <!-- Right side: Details -->
+  <div style="min-width: 320px;">
+    <p><strong>Year:</strong> <%= vehicle.inv_year %></p>
+    <p><strong>Color:</strong> <%= vehicle.inv_color %></p>
+    <p><strong>Mileage:</strong> <%= vehicle.inv_miles.toLocaleString() %> miles</p>
+    <p><strong>Price:</strong> $<%= vehicle.inv_price.toLocaleString() %></p>
+    
+    <h3 style="margin: 25px 0 10px 0;">Description</h3>
+    <p style="line-height: 1.6; font-size: 1.1rem;">
+      <%= vehicle.inv_description %>
+    </p>
+
+    <a href="/inv/type/<%= vehicle.classification_id %>" 
+       style="margin-top: 30px; display: inline-block; padding: 12px 24px; 
+              background: #336699; color: white; text-decoration: none; 
+              border-radius: 8px; font-weight: bold;">
+      ← Back to <%= vehicle.classification_name %> Vehicles
+    </a>
+  </div>
+</div>

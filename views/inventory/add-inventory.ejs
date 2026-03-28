@@ -1,0 +1,27 @@
+<h2>Add New Vehicle</h2>
+<%- messages() %>
+<% if (errors) { %>
+  <ul class="notice">
+  <% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+  <%  }) %>
+  </ul>
+<% } %>
+
+<form action="/inv/add-inventory" method="post">
+  <label>Classification</label>
+  <%- classificationSelect %>
+  
+  <label>Make</label>
+  <input type="text" name="inv_make" required value="<%= locals.inv_make %>">
+  
+  <label>Model</label>
+  <input type="text" name="inv_model" required value="<%= locals.inv_model %>">
+  
+  <!-- Repeat for year, price, miles, color, etc. -->
+  
+  <label>Image Path</label>
+  <input type="text" name="inv_image" required value="/images/vehicles/no-image.png">
+  
+  <button type="submit">Add Vehicle</button>
+</form>

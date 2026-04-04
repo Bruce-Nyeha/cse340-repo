@@ -16,6 +16,7 @@ const session = require("express-session")
 const pool = require('./database/')
 const accountRoute = require("./routes/accountRoute")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 
 /* ***********************
@@ -43,6 +44,7 @@ app.set("layout", "./layouts/layout")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(cookieParser())
 
 // Express Messages Middleware
 app.use(require('connect-flash')())

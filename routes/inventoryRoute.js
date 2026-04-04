@@ -40,5 +40,25 @@ router.post(
   utilities.handleErrors(invController.addInventory) 
 );
 
+/* ***************************
+ *  Return Inventory by Classification As JSON
+ * ************************** */
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+/* ***************************
+ *  Deliver Edit Inventory View
+ * ************************** */
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView))
+
+
+/* ***************************
+ *  Update Inventory Data
+ * ************************** */
+router.post(
+  "/update/",
+  regValidate.inventoryRules(),
+  regValidate.checkUpdateData,
+  utilities.handleErrors(invController.updateInventory)
+)
 
 module.exports = router;

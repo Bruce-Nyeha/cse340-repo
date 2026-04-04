@@ -308,7 +308,50 @@ form {
 }
 
 
+/* Account Management & Update Styles */
+#tools a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
 
+.account-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #336699;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
 
 /* Responsive adjustment */
 @media (max-width: 768px) {
